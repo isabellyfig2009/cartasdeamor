@@ -1,0 +1,177 @@
+/* Estética 'Correio do Amor' - Painel Admin de Cartas */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #faf3f3;
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 10% 80%, rgba(255, 192, 203, 0.2) 0%, transparent 50%);
+    color: #4a3b3b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+/* ==========================================================================
+   1. CABEÇALHO DO PAINEL (TOPO)
+   ========================================================================== */
+.topo {
+    text-align: center;
+    background: #ffffff;
+    width: 100%;
+    padding: 40px 20px;
+    box-shadow: 0 4px 20px rgba(179, 46, 70, 0.05);
+    border-bottom: 1px solid rgba(255, 192, 203, 0.3);
+}
+
+.topo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: #b32e46; /* Vermelho Romântico */
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.topo p {
+    margin-top: 8px;
+    font-size: 1.05rem;
+    color: #8c6d73;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   2. GRADE DE CARDS (GRID LAYOUT)
+   ========================================================================== */
+.cartas-list {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Card Individual da Carta */
+.letter-card {
+    background-color: #ffffff;
+    border: 1px solid #ebdcd7;
+    border-left: 4px solid #b32e46;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+}
+
+.letter-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(179, 46, 70, 0.08);
+}
+
+.letter-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #332225;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ebdcd7;
+    padding-bottom: 10px;
+}
+
+.letter-card p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a3b3b;
+}
+
+/* Bloco da mensagem em destaque (Itálico) */
+.letter-card p:nth-of-type(2) {
+    font-style: italic;
+    color: #5c4a4d;
+    background: #fffaf9;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.letter-card strong {
+    color: #332225;
+}
+
+/* ==========================================================================
+   3. BOTÕES E AÇÕES
+   ========================================================================== */
+.card-actions {
+    margin-top: auto;
+    padding-top: 12px;
+    text-align: right;
+}
+
+/* Botão de Excluir como Admin */
+.btn-deletar {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #fff5f5;
+    color: #DC143C;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-deletar:hover {
+    background-color: #ffe3e3;
+    color: #94112c;
+    transform: scale(1.03);
+}
+
+/* Estado de Lista Vazia */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1.5px dashed #ebdcd7;
+    border-radius: 16px;
+    padding: 50px 20px;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+    color: #8c6d73;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Botão Voltar ao Painel (Estilo pílula) */
+.btn-voltar {
+    display: inline-block;
+    text-decoration: none;
+    color: #b32e46;
+    background-color: #fff0f2;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(179, 46, 70, 0.15);
+    box-shadow: 0 4px 10px rgba(179, 46, 70, 0.02);
+}
+
+.btn-voltar:hover {
+    background-color: #b32e46;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(179, 46, 70, 0.2);
+}

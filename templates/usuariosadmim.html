@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin - Gerenciar Contas</title>
+        <link rel="stylesheet" href="../static/usuariosadmim.css">
+
+</head>
+<body>
+
+    <div class="topo">
+        <h1>Painel do Administrador</h1>
+        <p>Visualize, liste e gerencie todas as contas cadastradas</p>
+    </div>
+
+    <div class="usuarios-container">
+        {% if lista_usuarios %}
+            {% for usuario in lista_usuarios %}
+                <div class="usuario-card">
+                    <div class="usuario-info">
+                        <h3>Usuário: {{ usuario.nome }}</h3>
+                        <p>ID do Sistema: {{ usuario.id }}</p>
+                        <p>Login de Acesso: {{ usuario.login }}</p>
+                        <p>Senha Cadastrada: {{ usuario.senha }}</p>
+                    </div>
+
+                    <form action="{{ url_for('admin.deletar_usuario', id_usuario=usuario.id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar este usuário?');">
+                        <input type="hidden" name="login_usuario" value="{{ usuario.login }}">
+                        <button type="submit" class="btn-excluir">Excluir Conta</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty-state">
+                <p>Nenhum usuário cadastrado no sistema ainda.</p>
+            </div>
+        {% endif %}
+
+        <div style="text-align: center;">
+            <a href="/admin/painel" class="btn-voltar">Voltar ao Painel</a>
+        </div>
+    </div>
+
+</body>
+</html>

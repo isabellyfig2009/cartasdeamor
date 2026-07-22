@@ -1,0 +1,168 @@
+/* Estética inspirada no 'Cartas de Amor' - Painel Administrativo */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #faf3f3;
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(255, 182, 193, 0.25) 0%, transparent 50%);
+    color: #4a3b3b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Topo do Painel */
+.topo-admin {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.topo-admin h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #b32e46;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.topo-admin p {
+    font-size: 1.1rem;
+    color: #8c6d73;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+/* Container Central */
+.container-admin {
+    width: 100%;
+    max-width: 750px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(179, 46, 70, 0.05);
+    border: 1px solid rgba(255, 192, 203, 0.3);
+}
+
+/* Boas-vindas */
+.boas-vindas {
+    margin-bottom: 35px;
+    border-bottom: 1.5px dashed #ebdcd7;
+    padding-bottom: 20px;
+}
+
+.boas-vindas h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #332225;
+    margin-bottom: 6px;
+}
+
+.boas-vindas p {
+    font-size: 0.95rem;
+    color: #6b5257;
+}
+
+/* Grid de Menus (Cards) */
+.menu-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+/* Estilização de cada Bloco/Card */
+.card {
+    background: #fffaf9;
+    border: 1.5px solid #ebdcd7;
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #b32e46;
+    box-shadow: 0 6px 20px rgba(179, 46, 70, 0.06);
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #b32e46;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #6b5257;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Garante que os botões fiquem alinhados embaixo mesmo com textos de tamanhos diferentes */
+}
+
+/* Links/Botões dentro dos Cards */
+.card a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #b32e46;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.card a:hover {
+    background-color: #942237;
+}
+
+/* Rodapé e Botão Sair */
+.rodape-admin {
+    text-align: center;
+}
+
+.btn-sair-admin {
+    display: inline-block;
+    text-decoration: none;
+    color: #8c6d73;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.btn-sair-admin:hover {
+    color: #b32e46;
+    background-color: #fff0f2;
+    border-color: rgba(179, 46, 70, 0.15);
+}
+
+/* Responsividade para telas menores (Celular) */
+@media (max-width: 600px) {
+    .menu-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .container-admin {
+        padding: 25px;
+    }
+}

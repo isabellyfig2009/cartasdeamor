@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin - Lista de Cartas</title>
+    <link rel="stylesheet" href="/static/cartas.css">
+</head>
+<body>
+
+    <div class="topo">
+        <h1>Painel do Administrador</h1>
+        <p>Todas as Cartas Trafegadas no Sistema</p>
+    </div>
+
+    <div class="cartas-list">
+
+        {% if cartas %}
+
+            {% for carta in cartas %}
+                <div class="letter-card">
+                    <h3>Carta para: {{ carta.destinatario }}</h3>
+                    <p><strong>Remetente:</strong> {{ carta.remetente }}</p>
+                    <p><strong>Mensagem:</strong> "{{ carta.texto }}"</p>
+
+                    <div class="card-actions">
+                        <a href="/usuario/admin/deletar_carta/{{ carta.texto }}" class="btn-deletar">Excluir como Admin 🗑️</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% else %}
+            <div class="empty-state">
+                <p>Nenhuma carta foi enviada no sistema ainda. 💌</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/admin/painel" class="btn-voltar">Voltar ao Painel</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* Estética inspirada no 'Cartas de Amor' - Cartas Recebidas */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #faf3f3;
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(255, 182, 193, 0.2) 0%, transparent 40%);
+    color: #4a3b3b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* Topo do Painel */
+.topo-Painel {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.topo-Painel h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: #b32e46;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.topo-Painel p {
+    font-size: 1rem;
+    color: #8c6d73;
+    font-weight: 400;
+}
+
+/* Container Centralizador */
+.conteudo-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Barra de ações superiores (Botão Voltar) */
+.acoes {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-voltar {
+    text-decoration: none;
+    color: #8c6d73;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.btn-voltar:hover {
+    color: #b32e46;
+}
+
+/* Lista das Mensagens */
+.lista-recebidas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* O Bloco / Card de cada Carta */
+.card-carta {
+    background: #ffffff;
+    border: 1px solid #ebdcd7;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(179, 46, 70, 0.02);
+    border-left: 4px solid #b32e46; /* Barrinha vermelha charmosa */
+    transition: transform 0.2s ease;
+}
+
+.card-carta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(179, 46, 70, 0.05);
+}
+
+.remetente {
+    font-size: 0.85rem;
+    color: #8c6d73;
+    margin-bottom: 10px;
+}
+
+.remetente strong {
+    color: #332225;
+}
+
+.texto-carta {
+    font-size: 1rem;
+    color: #4a3b3b;
+    line-height: 1.6;
+    font-style: italic; /* Dá o ar de carta manuscrita */
+}
+
+/* Caixa de Entrada Vazia (Estado Sem Cartas) */
+.sem-cartas {
+    text-align: center;
+    padding: 50px 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1.5px dashed #ebdcd7;
+    color: #8c6d73;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sem-cartas p {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 400px;
+}
+
+/* Botão para induzir o usuário a enviar uma nova */
+.btn-enviar-nova {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #b32e46;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(179, 46, 70, 0.2);
+}
+
+.btn-enviar-nova:hover {
+    background-color: #942237;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(179, 46, 70, 0.3);
+}

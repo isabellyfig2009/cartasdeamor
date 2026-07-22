@@ -1,0 +1,158 @@
+/* Estética inspirada no 'Cartas de Amor' - Gerenciamento de Usuários */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #faf3f3;
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(255, 182, 193, 0.2) 0%, transparent 40%);
+    color: #4a3b3b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* Topo do Painel */
+.topo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.topo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: #b32e46;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.topo p {
+    font-size: 1rem;
+    color: #8c6d73;
+    font-weight: 400;
+}
+
+/* Container Principal dos Usuários */
+.usuarios-container {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaçamento idêntico entre cada card de usuário */
+}
+
+/* Card Individual de cada Usuário */
+.usuario-card {
+    background: #ffffff;
+    border: 1px solid #ebdcd7;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(179, 46, 70, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.usuario-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(179, 46, 70, 0.05);
+    border-color: rgba(179, 46, 70, 0.3);
+}
+
+/* Bloco de Informações Textuais */
+.usuario-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #332225;
+    margin-bottom: 8px;
+}
+
+.usuario-info p {
+    font-size: 0.9rem;
+    color: #6b5257;
+    line-height: 1.5;
+}
+
+.usuario-info p strong {
+    color: #4a3b3b;
+}
+
+/* Botão Excluir Conta */
+.btn-excluir {
+    background-color: #fff0f2;
+    color: #dc143c;
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    padding: 10px 18px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-excluir:hover {
+    background-color: #dc143c;
+    color: #ffffff;
+    border-color: #dc143c;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.2);
+}
+
+.btn-excluir:active {
+    transform: scale(0.98);
+}
+
+/* Estado Vazio (Caso não haja usuários cadastrados) */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1.5px dashed #ebdcd7;
+    color: #8c6d73;
+    font-size: 0.95rem;
+}
+
+/* Botão Voltar ao Painel */
+.btn-voltar {
+    display: inline-block;
+    margin-top: 24px;
+    text-decoration: none;
+    color: #b32e46;
+    background-color: #fff0f2;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(179, 46, 70, 0.15);
+}
+
+.btn-voltar:hover {
+    background-color: #b32e46;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(179, 46, 70, 0.15);
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 550px) {
+    .usuario-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .btn-excluir {
+        width: 100%;
+        text-align: center;
+    }
+}

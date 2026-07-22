@@ -1,0 +1,220 @@
+/* Estética inspirada no 'Cartas de Amor' */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Alex+Brush&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #faf3f3;
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 10% 80%, rgba(255, 192, 203, 0.3) 0%, transparent 50%);
+    color: #4a3b3b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Topo do Site */
+.topo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.topo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #b32e46;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.topo p {
+    font-size: 1.1rem;
+    color: #8c6d73;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+}
+
+.topo p::after {
+    content: ' ♥';
+    color: #d94b68;
+    font-size: 0.9rem;
+}
+
+/* Apresentação */
+.apresentacao {
+    text-align: center;
+    max-width: 500px;
+    margin-bottom: 35px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(217, 75, 104, 0.04);
+}
+
+.apresentacao p {
+    font-size: 1rem;
+    color: #6b5257;
+    line-height: 1.5;
+}
+
+/* Container de Cadastro (Card principal) */
+.cadastro {
+    background: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px rgba(179, 46, 70, 0.06);
+    border: 1px solid rgba(255, 192, 203, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalhe decorativo sutil no topo do card */
+.cadastro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ffb6c1, #b32e46, #ffb6c1);
+}
+
+/* Título interno do card */
+.cadastro > p:first-of-type {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #332225;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Formulário */
+form {
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6b5257;
+    display: inline-block;
+    margin-bottom: 6px;
+    margin-top: 12px;
+    padding-left: 4px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #ebdcd7;
+    background-color: #fffaf9;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #4a3b3b;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #d94b68;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(217, 75, 104, 0.1);
+}
+
+/* Botões principais e links estilizados */
+button[type="submit"] {
+    width: 100%;
+    background-color: #b32e46;
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(179, 46, 70, 0.2);
+}
+
+button[type="submit"]:hover {
+    background-color: #942237;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(179, 46, 70, 0.3);
+}
+
+/* Textos intermediários de navegação */
+.cadastro p {
+    font-size: 0.9rem;
+    color: #8c6d73;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Link para login ("Ir para Login") */
+.sua-classe-de-botao {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #b32e46;
+    background-color: #fff0f2;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(179, 46, 70, 0.15);
+}
+
+.sua-classe-de-botao:hover {
+    background-color: #ffe3e7;
+    color: #942237;
+}
+
+/* Área do Administrador */
+a[href="/admin/login"] {
+    display: block;
+    text-decoration: none;
+}
+
+a[href="/admin/login"] button {
+    width: 100%;
+    background: transparent;
+    color: #8c6d73;
+    border: 1.5px dashed #ebdcd7;
+    padding: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+a[href="/admin/login"] button:hover {
+    border-color: #b32e46;
+    color: #b32e46;
+    background-color: #fff0f2;
+}

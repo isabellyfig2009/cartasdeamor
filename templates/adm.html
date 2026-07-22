@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Administrador</title>
+<link rel="stylesheet" href="../static/adm.css">
+</head>
+<body>
+
+    <div class="topo-admin">
+        <h1>Painel do Administrador</h1>
+        <p>Gerenciamento e controle do sistema de cartas</p>
+    </div>
+
+    <div class="container-admin">
+        <div class="boas-vindas">
+            <h2>Olá, Administrador!</h2>
+            <p>Escolha uma das opções abaixo para gerenciar a plataforma:</p>
+        </div>
+
+        <div class="menu-cards">
+            <div class="card">
+                <h3>Usuários</h3>
+                <p>Visualize, liste e gerencie todas as contas cadastradas no sistema.</p>
+                <a href="/admin/listar">Ver Usuários</a>
+            </div>
+
+            <div class="card">
+                <h3>Cartas</h3>
+                <p>Monitore o fluxo de mensagens e estatísticas do sistema.</p>
+                <a href="/admin/cartas">Ver Cartas</a>
+            </div>
+        </div>
+
+        <div class="rodape-admin">
+            <a href="/logout" class="btn-sair-admin">Sair do Painel</a>
+        </div>
+    </div>
+
+</body>
+</html>

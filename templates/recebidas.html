@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartas Recebidas</title>
+    <link rel="stylesheet" href="../static/recebidas.css">
+</head>
+
+<body>
+
+    <div class="topo-Painel">
+        <h1>Minhas Cartas Recebidas</h1>
+        <p>Veja os sentimentos e declarações que enviaram para você</p>
+    </div>
+
+    <div class="conteudo-container">
+        <div class="acoes">
+            <a href="/logado" class="btn-voltar">← Voltar ao Painel</a>
+        </div>
+
+        <div class="lista-recebidas">
+            {% if cartas %}
+                {% for carta in cartas %}
+                    <div class="card-carta">
+                        <p class="remetente">
+                            <strong>De:</strong> {{ carta.remetente }}
+                        </p>
+                        <p class="texto-carta">
+                            {{ carta.texto }}
+                        </p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="sem-cartas">
+                    <p>Sua caixa de entrada está vazia no momento. Quem sabe uma carta não chega logo?</p>
+                    <a href="/logado" class="btn-enviar-nova">Enviar uma Carta</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>

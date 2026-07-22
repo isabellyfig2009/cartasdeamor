@@ -1,0 +1,164 @@
+/* Estética inspirada no 'Cartas de Amor' - Login do Administrador */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #faf3f3;
+    background-image:
+        radial-gradient(circle at 50% 30%, rgba(179, 46, 70, 0.08) 0%, transparent 60%);
+    color: #4a3b3b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Topo Restrito */
+.topo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.topo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: #b32e46;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.topo p {
+    font-size: 0.85rem;
+    color: #8c6d73;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.apresentacao {
+    text-align: center;
+    max-width: 400px;
+    color: #6b5257;
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* Card de Login Admin */
+.cadastro {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid #ebdcd7;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalhe superior em tom mais escuro para indicar área séria/restrita */
+.cadastro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: #b32e46;
+}
+
+.cadastro > p:first-of-type {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #332225;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Formulário e Inputs (com espaçamento embutido via margem) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #ebdcd7;
+    background-color: #fffaf9;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #4a3b3b;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus {
+    border-color: #b32e46;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(179, 46, 70, 0.1);
+}
+
+/* Botão de Entrar */
+button[type="submit"] {
+    width: 100%;
+    background-color: #b32e46;
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(179, 46, 70, 0.2);
+}
+
+button[type="submit"]:hover {
+    background-color: #942237;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(179, 46, 70, 0.3);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Alerta de Mensagem de Erro (Template Jinja) */
+.mensagem-erro {
+    margin-top: 20px;
+    background-color: #fff0f2;
+    border: 1px solid rgba(179, 46, 70, 0.2);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    animation: shake 0.4s ease-in-out;
+}
+
+.mensagem-erro p {
+    color: #b32e46;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Animação de tremor sutil para quando o erro aparece */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}

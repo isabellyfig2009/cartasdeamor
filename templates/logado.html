@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/logado.css">
+    <title>Minhas Cartas - Área do Usuário</title>
+</head>
+<body>
+
+    <div class="topo">
+        <h1>Correio do Amor</h1>
+        <p>Bem-vindo de volta, {{ usuario }}!</p>
+    </div>
+
+    <p class="apresentacao">Escreva uma linda mensagem para alguém especial abaixo.</p>
+
+    <div class="cadastro">
+        <p>Enviar Nova Carta</p>
+        <form action="/usuario/salvarcarta" method="POST">
+            <input type="text" name="usuario" value="{{ usuario }}" placeholder="Seu nome (Remetente)" required>
+            <input type="text" name="destinatario" placeholder="Para quem é a carta? (Nome do Usuário)" required>
+            <textarea name="texto" rows="5" placeholder="Escreva a sua mensagem aqui com carinho..." required></textarea>
+
+            <select name="cor">
+                <option value="padrao">Padrão (Vermelho Romântico) ❤️</option>
+                <option value="amizade">Amizade (Amarelo) 💛</option>
+                <option value="agradecimento">Agradecimento (Azul) 💙</option>
+            </select>
+
+            <button type="submit">Enviar Carta 💌</button>
+        </form>
+    </div>
+
+    <div class="caixa-cartas">
+        <h2>Minhas Cartas Recebidas 📬</h2>
+
+        {% if recebidas %}
+            <div class="lista-mensagens">
+                {% for carta in recebidas %}
+                    <div class="item-carta {{ carta.cor }}">
+                        <p class="carta-meta"><strong>De:</strong> {{ carta.remetente }}</p>
+                        <p class="carta-texto">"{{ carta.texto }}"</p>
+
+                        <div class="card-actions">
+                            <a href="/usuario/deletar_carta/{{ carta.texto }}" class="btn-excluir">Excluir 🗑️</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="sem-cartas">Você ainda não recebeu nenhuma carta de amor. 💔</p>
+        {% endif %}
+    </div>
+
+    <div class="caixa-cartas">
+        <h2>Cartas que Você Enviou ✉️</h2>
+
+        {% if enviadas %}
+            <div class="lista-mensagens">
+                {% for carta in enviadas %}
+                    <div class="item-carta enviada">
+                        <p class="carta-meta"><strong>Para:</strong> {{ carta.destinatario }}</p>
+                        <p class="carta-texto">"{{ carta.texto }}"</p>
+
+                        <div class="card-actions">
+                            <a href="/usuario/deletar_carta/{{ carta.texto }}" class="btn-excluir">Excluir 🗑️</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="sem-cartas">Você ainda não enviou nenhuma carta de amor.</p>
+        {% endif %}
+    </div>
+
+    <div style="text-align: center; margin-top: 20px; margin-bottom: 50px;">
+        <a href="/" class="link-voltar">Sair da Conta</a>
+    </div>
+
+</body>
+</html>

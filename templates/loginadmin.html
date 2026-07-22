@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrador - Login</title>
+<link rel="stylesheet" href="../static/loginadmim.css">
+</head>
+<body>
+
+    <div class="topo">
+        <h1>Painel de Controle</h1>
+        <p>Acesso Restrito ao Administrador</p>
+    </div>
+
+    <p class="apresentacao">Por favor, insira suas credenciais administrativas para acessar o painel.</p>
+
+    <div class="cadastro">
+        <p>Login Administrador</p>
+
+        <form action="/admin/fazerlogin" method="POST">
+
+            <input type="text" name="loginadmin" placeholder="Digite seu usuário de admin" required>
+
+            <input type="password" name="senhaadmin" placeholder="Digite sua senha" required>
+
+            <button type="submit">
+                Entrar no Painel
+            </button>
+
+        </form>
+
+        {% if msg %}
+            <div class="mensagem-erro">
+                <p>{{ msg }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

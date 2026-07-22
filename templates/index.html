@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartas</title>
+<link rel="stylesheet" href="../static/index.css">
+</head>
+<body>
+    <div class="topo">
+        <h1>Cartas de amor</h1>
+        <p>Declare seu amor sem medo!</p>
+    </div>
+
+    <div class="apresentacao">
+        <p>Seja bem-vindo(a). Transforme sentimentos em memórias eternas.</p>
+    </div>
+
+    <div class="cadastro">
+        <p>Cadastro de usuário</p>
+        <form action="/usuario/cadastrar" method="post">
+            <label>Nome:</label><br>
+            <input type="text" name="nome" required><br>
+
+            <label>Usuário (Login):</label><br>
+            <input type="text" name="loginusuario" required><br>
+
+            <label>Senha:</label><br>
+            <input type="password" name="senhausuario" required><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <p>Já tem uma conta?</p>
+<a href="/usuario/login" class="sua-classe-de-botao">Ir para Login</a>
+
+        <p>É administrador?</p>
+        <a href="/admin/login"><button>Login Administrador</button></a>
+
+
+    </div>
+</body>
+</html>
