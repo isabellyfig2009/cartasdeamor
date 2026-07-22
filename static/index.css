@@ -1,4 +1,4 @@
-/* Estética inspirada no 'Cartas de Amor' */
+/* Estética inspirada no 'Cartas de Amor' - Tema Roxo */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Alex+Brush&display=swap');
 
 * {
@@ -9,11 +9,11 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #faf3f3;
+    background-color: #f8f5ff;
     background-image:
-        radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.4) 0%, transparent 40%),
-        radial-gradient(circle at 10% 80%, rgba(255, 192, 203, 0.3) 0%, transparent 50%);
-    color: #4a3b3b;
+        radial-gradient(circle at 80% 20%, rgba(196, 181, 253, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 10% 80%, rgba(167, 139, 250, 0.35) 0%, transparent 50%);
+    color: #43384f;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ body {
 .topo h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
-    color: #b32e46;
+    color: #6d28d9;
     font-weight: 700;
     margin-bottom: 8px;
     letter-spacing: -0.5px;
@@ -39,15 +39,15 @@ body {
 
 .topo p {
     font-size: 1.1rem;
-    color: #8c6d73;
+    color: #7c3aed;
     font-weight: 400;
     position: relative;
     display: inline-block;
 }
 
 .topo p::after {
-    content: ' ♥';
-    color: #d94b68;
+    content: ' 💜';
+    color: #8b5cf6;
     font-size: 0.9rem;
 }
 
@@ -56,34 +56,34 @@ body {
     text-align: center;
     max-width: 500px;
     margin-bottom: 35px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.7);
     padding: 15px 25px;
     border-radius: 50px;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 15px rgba(217, 75, 104, 0.04);
+    border: 1px solid rgba(196, 181, 253, 0.5);
+    box-shadow: 0 4px 15px rgba(109, 40, 217, 0.06);
 }
 
 .apresentacao p {
     font-size: 1rem;
-    color: #6b5257;
+    color: #5b4b73;
     line-height: 1.5;
 }
 
-/* Container de Cadastro (Card principal) */
+/* Container de Cadastro */
 .cadastro {
     background: #ffffff;
     width: 100%;
     max-width: 450px;
     padding: 40px 35px;
     border-radius: 24px;
-    box-shadow: 0 10px 35px rgba(179, 46, 70, 0.06);
-    border: 1px solid rgba(255, 192, 203, 0.3);
+    box-shadow: 0 10px 35px rgba(109, 40, 217, 0.10);
+    border: 1px solid rgba(196, 181, 253, 0.5);
     position: relative;
     overflow: hidden;
 }
 
-/* Detalhe decorativo sutil no topo do card */
+/* Barra decorativa */
 .cadastro::before {
     content: '';
     position: absolute;
@@ -91,14 +91,14 @@ body {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #ffb6c1, #b32e46, #ffb6c1);
+    background: linear-gradient(90deg, #c4b5fd, #6d28d9, #c4b5fd);
 }
 
-/* Título interno do card */
+/* Título */
 .cadastro > p:first-of-type {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
-    color: #332225;
+    color: #3b0764;
     font-weight: 700;
     text-align: center;
     margin-bottom: 25px;
@@ -112,7 +112,7 @@ form {
 label {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #6b5257;
+    color: #5b4b73;
     display: inline-block;
     margin-bottom: 6px;
     margin-top: 12px;
@@ -123,12 +123,12 @@ input[type="text"],
 input[type="password"] {
     width: 100%;
     padding: 14px 16px;
-    border: 1.5px solid #ebdcd7;
-    background-color: #fffaf9;
+    border: 1.5px solid #ddd6fe;
+    background-color: #faf8ff;
     border-radius: 12px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.95rem;
-    color: #4a3b3b;
+    color: #43384f;
     transition: all 0.3s ease;
     margin-bottom: 8px;
 }
@@ -136,15 +136,15 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="password"]:focus {
     outline: none;
-    border-color: #d94b68;
+    border-color: #7c3aed;
     background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(217, 75, 104, 0.1);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
 }
 
-/* Botões principais e links estilizados */
+/* Botão principal */
 button[type="submit"] {
     width: 100%;
-    background-color: #b32e46;
+    background-color: #6d28d9;
     color: #ffffff;
     border: none;
     padding: 16px;
@@ -155,45 +155,45 @@ button[type="submit"] {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 15px;
-    box-shadow: 0 4px 12px rgba(179, 46, 70, 0.2);
+    box-shadow: 0 4px 12px rgba(109, 40, 217, 0.25);
 }
 
 button[type="submit"]:hover {
-    background-color: #942237;
+    background-color: #5b21b6;
     transform: translateY(-1px);
-    box-shadow: 0 6px 15px rgba(179, 46, 70, 0.3);
+    box-shadow: 0 6px 15px rgba(109, 40, 217, 0.35);
 }
 
-/* Textos intermediários de navegação */
+/* Textos */
 .cadastro p {
     font-size: 0.9rem;
-    color: #8c6d73;
+    color: #7b6a8b;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
-/* Link para login ("Ir para Login") */
+/* Link Login */
 .sua-classe-de-botao {
     display: block;
     text-align: center;
     text-decoration: none;
-    color: #b32e46;
-    background-color: #fff0f2;
+    color: #6d28d9;
+    background-color: #f3e8ff;
     padding: 12px;
     border-radius: 12px;
     font-size: 0.95rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 1px solid rgba(179, 46, 70, 0.15);
+    border: 1px solid rgba(109, 40, 217, 0.15);
 }
 
 .sua-classe-de-botao:hover {
-    background-color: #ffe3e7;
-    color: #942237;
+    background-color: #e9d5ff;
+    color: #5b21b6;
 }
 
-/* Área do Administrador */
+/* Área Administrador */
 a[href="/admin/login"] {
     display: block;
     text-decoration: none;
@@ -202,8 +202,8 @@ a[href="/admin/login"] {
 a[href="/admin/login"] button {
     width: 100%;
     background: transparent;
-    color: #8c6d73;
-    border: 1.5px dashed #ebdcd7;
+    color: #7b6a8b;
+    border: 1.5px dashed #c4b5fd;
     padding: 12px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.9rem;
@@ -214,7 +214,7 @@ a[href="/admin/login"] button {
 }
 
 a[href="/admin/login"] button:hover {
-    border-color: #b32e46;
-    color: #b32e46;
-    background-color: #fff0f2;
+    border-color: #6d28d9;
+    color: #6d28d9;
+    background-color: #f3e8ff;
 }
