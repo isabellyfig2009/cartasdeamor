@@ -4,23 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Carta</title>
-<link rel="stylesheet" href="../static/css/enviar.css"></head>
+    <link rel="stylesheet" href="../static/css/enviar.css">
+</head>
 <body>
 
-    <div class="card-carta">
+    <div class="card-carta" id="card-principal">
         <h1>Enviar Carta</h1>
 
-        <form action="/logado/salvarcarta" method="POST">
+        <form action="/usuario/salvarcarta" method="POST">
             <input type="hidden" name="usuario" value="{{ usuario }}">
+
+            <input type="hidden" id="cor" name="cor" value="padrao">
 
             <div class="form-group">
                 <label for="destinatario">Enviar para:</label>
-                <input type="text" id="destinatario" name="destinatario" placeholder="Nome do seu amor...">
+                <input type="text" id="destinatario" name="destinatario" placeholder="Nome do seu amor..." required>
+            </div>
+
+            <div class="form-group">
+                <label>Escolha o tema da carta:</label>
+                <div class="botoes-tema">
+                    <button type="button" onclick="mudarTema('padrao', '#ffffff', '#333333')">Padrão ✉️</button>
+                    <button type="button" onclick="mudarTema('rosa', '#ffe6ea', '#b32e46')">Romântico 💖</button>
+                    <button type="button" onclick="mudarTema('noturno', '#2b1b17', '#ffffff')">Secreto 🌙</button>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="texto">Carta:</label>
-                <textarea id="texto" name="texto" rows="10" placeholder="Escreva o que está no seu coração..."></textarea>
+                <textarea id="texto" name="texto" rows="10" placeholder="Escreva o que está no seu coração..." required></textarea>
             </div>
 
             <button type="submit">
@@ -29,5 +41,17 @@
         </form>
     </div>
 
+    <script>
+        const cardContainer = document.getElementById('card-principal');
+        const inputCor = document.getElementById('cor');
+
+        function mudarTema(nomeTema, corFundo, corTexto) {
+
+            cardContainer.style.backgroundColor = corFundo;
+            cardContainer.style.color = corTexto;
+
+            inputCor.value = nomeTema;
+        }
+    </script>
 </body>
 </html>
