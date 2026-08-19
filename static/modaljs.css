@@ -1,72 +1,89 @@
-/* Container pai para segurar o posicionamento relativo */
+.topo {
+    position: relative; /* Necessário para alinhar o botão no topo */
+    width: 100%;
+    padding-top: 20px; /* Dá espaço para o título não colidir */
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Encosta a área do perfil no canto superior direito */
 .container-perfil {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
 }
 
-/* Botão do Topo */
 .btn-perfil {
-    background: transparent;
-    border: 1px solid #ebdcd7;
+    background-color: #ffffff;
     color: #b32e46;
-    padding: 8px 16px;
+    border: 1.5px solid #b32e46;
+    padding: 8px 15px;
     border-radius: 20px;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Impede o texto de quebrar linha */
+    transition: all 0.2s ease;
 }
 
-/* O Card Suspenso (Flutuante estilo Globo.com) */
+.btn-perfil:hover {
+    background-color: #fff0f2;
+}
+
+/* Card Suspenso (Popover) */
 .card-suspenso {
     display: none; /* Inicia escondido */
     position: absolute;
-    top: 45px; /* Aparece logo abaixo do botão */
-    right: 0; /* Alinhado à direita */
-    width: 260px;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra elegante estilo o da imagem */
-    border: 1px solid rgba(255, 192, 203, 0.5);
-    z-index: 100;
+    top: 40px; /* Surge logo abaixo do botão */
+    right: 0;
+    width: 250px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ebdcd7;
+    z-index: 1001;
     text-align: center;
 }
 
 .card-suspenso h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #b32e46;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .card-suspenso p {
     font-size: 0.85rem;
     color: #6b5257;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-/* Botão X para fechar (igual a do professor) */
+.info-usuario {
+    margin-top: 10px;
+}
+
+.info-usuario input {
+    width: 100%;
+    padding: 6px 10px;
+    margin-top: 5px;
+    border: 1px solid #ebdcd7;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+}
+
 .fechar {
     position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #8c6d73;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
     cursor: pointer;
+    color: #8c6d73;
 }
 
 .fechar:hover {
     color: #b32e46;
-}
-
-/* Input interno e botão de ação */
-.card-suspenso input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ebdcd7;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    margin-top: 5px;
 }
 
 .btn-entrar {
@@ -74,13 +91,9 @@
     background-color: #b32e46;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 8px;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn-entrar:hover {
-    background-color: #942237;
+    margin-top: 12px;
 }

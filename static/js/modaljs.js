@@ -1,33 +1,28 @@
-// Mapeando as variáveis exatamente como o professor ensinou
+// Captura dos elementos conforme a aula
 const modal = document.getElementById('meuModal');
 const input_nome = document.getElementById('inputnome');
 const msg_alerta = document.getElementById('msgalerta');
 
-// 1. Função de abrir o card suspenso
+// Mostra o card quando o mouse entra na área do perfil
 function abrirmodal() {
-    // Se estiver visível, fecha; se estiver escondido, abre! (Toggle)
-    if (modal.style.display === 'block') {
-        modal.style.display = 'none';
-    } else {
-        modal.style.display = 'block';
-    }
+    modal.style.display = 'block';
 }
 
-// 2. Função de fechar no botão (X)
+// Esconde o card quando o mouse sai da área do perfil
 function fechar() {
     modal.style.display = 'none';
 }
 
-// 3. Função 'mudou' do professor
+// Validação e alteração do nome no evento 'onchange'
 function mudou() {
     if (input_nome.value === "") {
         msg_alerta.style.color = "red";
-        msg_alerta.style.fontSize = "11px";
-        msg_alerta.textContent = "Digite algo válido!";
+        msg_alerta.style.fontSize = "12px";
+        msg_alerta.textContent = "Digite um nome!";
     } else {
         document.getElementById('nome-perfil').textContent = input_nome.value;
         msg_alerta.style.color = "green";
-        msg_alerta.style.fontSize = "11px";
-        msg_alerta.textContent = "Nome alterado!";
+        msg_alerta.style.fontSize = "12px";
+        msg_alerta.textContent = "Nome alterado com sucesso!";
     }
 }

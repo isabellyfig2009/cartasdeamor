@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/static/logado.css">
+    <!-- Adicionado o CSS do modal/perfil -->
+    <link rel="stylesheet" href="/static/modaljs.css">
     <title>Minhas Cartas - Área do Usuário</title>
 </head>
 <body>
 
     <div class="topo">
+
+        <!-- 🔘 BOTÃO DE PERFIL + MENU SUSPENSO (Acionados ao passar/tirar o mouse) -->
+        <div class="container-perfil" onmouseover="abrirmodal()" onmouseleave="fechar()">
+            <button type="button" class="btn-perfil">
+                Conta / Perfil 👤
+            </button>
+
+            <!-- Card Suspenso do Perfil -->
+            <div id="meuModal" class="card-suspenso">
+                <span id="btnFechar" class="fechar" onclick="fechar()">&times;</span>
+
+                <h3>CORREIO DO AMOR</h3>
+                <p id="msg_modal_texto">Sua conta de usuário no sistema.</p>
+
+                <div class="info-usuario">
+                    <p><strong>Usuário Atual:</strong> <span id="nome-perfil">{{ usuario }}</span></p>
+                    <input type="text" id="inputnome" placeholder="Alterar nome visual..." onchange="mudou()">
+                    <a id="msgalerta"></a>
+                </div>
+
+                <button type="button" class="btn-entrar" onclick="fechar()">Fechar Menu</button>
+            </div>
+        </div>
+
         <h1>Correio do Amor</h1>
         <p>Bem-vindo de volta, {{ usuario }}!</p>
     </div>
@@ -77,5 +103,7 @@
         <a href="/" class="link-voltar">Sair da Conta</a>
     </div>
 
+    <!-- Importando o script JS externo -->
+    <script src="/static/js/modaljs.js"></script>
 </body>
 </html>
